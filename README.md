@@ -7,7 +7,7 @@ This repository contains alternative TikZ driver for `tex4ht`. It uses `dvisvgm`
 - compilation errors
 
 
-Usage: 
+## Usage
 
 Put following lines before TikZ package loading:
 
@@ -15,7 +15,7 @@ Put following lines before TikZ package loading:
       \def\pgfsysdriver{pgfsys-dvisvgm4ht.def}
     \fi 
 
-Installation:
+## Installation
 
 Place `pgfsys-dvisvgm4ht.def` into `tex/latex/dvisvgm4ht` directory inside your local `TEXMFHOME` tree. For example:
 
