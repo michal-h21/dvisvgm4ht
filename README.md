@@ -34,8 +34,8 @@ It can even support MathML output in SVG. Which is unfortunately supported only 
 
 ## Installation
 
-Place `pgfsys-dvisvgm4ht.def` into `tex/latex/dvisvgm4ht` directory inside your local `TEXMFHOME` tree. For example:
+Clone this repository to a `tex/latex` subdirectory in your local `TEXMFHOME` tree. For example:
 
-     ~/texmf/tex/latex/dvisvgm4ht/pgfsys-dvisvgm4ht.def
+     ~/texmf/tex/latex/dvisvgm4ht/
 
 Read more about [TEXMFHOME](https://tex.stackexchange.com/a/271545/2891).
