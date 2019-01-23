@@ -20,7 +20,7 @@ Put following lines before TikZ package loading:
       \def\pgfsysdriver{pgfsys-dvisvgm4ht.def}
     \fi 
 
-# pgfsys-tex4ht.def
+# pgfsys-tex4ht-updated.def
 
 The second driver is updated original `tex4ht` driver. It will be used by default when properly installed. Note that if you use complex text nodes, like math contents, better results can be obtained using `escape=true` option. This option can be set globally in the custom configuration file:
 
