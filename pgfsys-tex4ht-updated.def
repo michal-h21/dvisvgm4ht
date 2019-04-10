@@ -260,9 +260,9 @@
   % these are configures for the foreignelement rendering method of text nodes : we let tex4ht write xhtml and mathml in the svg picture
   % 
   \gdef\pgfsys@foreignobject@configure{%
-    \Configure{$}{\Configure{@math}{%\a:mathml
+    \Configure{$}{\Configure{@math}{\a:mathml
         display="inline" }\DviMathAlt}{\EndDviMath}{}%%% we REALLY need to use \DviMathAlt here instead of \DviMath see above remark
-    \Configure{$$}{\Configure{@math}{%\a:mathml
+    \Configure{$$}{\Configure{@math}{\a:mathml
         display="block" }\IgnorePar
       \ifvmode\else \HCode{<!--tex4ht:inline-->}\fi\EndP
       \DviMath}{\EndDviMath\ShowPar\pgfsys@foreignobject@par{\csname HCondtrue\endcsname\noindent}
