@@ -11,10 +11,10 @@
 % Driver commands for tex4ht
 
 %
-% Load common pdf commands:
+% Load common pgf commands:
 %
-  %\input pgfsys-dvisvgm.def
-\input pgfsys-dvips.def
+\input pgfsys-dvisvgm.def
+%\input pgfsys-dvips.def
 
 
 
