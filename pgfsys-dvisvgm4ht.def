@@ -12,9 +12,10 @@
 
 %
 % Load common pgf commands:
-%
-\input pgfsys-dvisvgm.def
-%\input pgfsys-dvips.def
+% the dvisvgm driver has support for patterns and other stuff that fails with
+% the dvips driver but the image is cropped. So we use the dvips driver instead.
+%\input pgfsys-dvisvgm.def
+\input pgfsys-dvips.def
 
 
 
