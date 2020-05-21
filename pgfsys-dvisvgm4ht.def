@@ -44,6 +44,7 @@
       \egroup%
       \par%
   }%
+  \ConfigureEnv{tikzpicture}{\ifvmode\Picture*{}\else\Picture+{}\fi\def\inside@pict@cmd{}}{\EndPicture}{}{}
 }
 
 
