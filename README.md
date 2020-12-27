@@ -14,7 +14,7 @@ issues are:
 
 The first driver one uses `dvisvgm` for the SVG file creation, resulting in
 higher quality graphics. The extra step with `dvisvgm` invocation can result in
-longer compilation time, but the result is usually better, than with the
+longer compilation time, but the result looks usually better than with the
 default driver.
 
 This driver is a preferred option, as the resulting SVG files usually look
