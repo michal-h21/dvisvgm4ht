@@ -31,7 +31,9 @@ It compiles only changed figures on subsequent compilation runs.
 ## pgfsys-tex4ht-updated.def
 
 The second available driver is a modified version of the original `tex4ht`
-driver. 
+driver. It doesn't rely on external tools for the conversion, so the compilation can
+be faster. The downside is that the resulting SVG file can look quite different
+than expected.
 
 Note that if you use complex text nodes, like math contents, better
 results can be obtained using `escape=true` option. This option can be set
