@@ -27,6 +27,11 @@ take lot of time. You can speed it up using the `dvisvgm_hashes` extension for `
 
 It compiles only changed figures on subsequent compilation runs.
 
+This driver has two modes. The default one supports complex images, but it has
+some issues with patterns. To fix that, you can try the `tikz+` option. 
+This option supports patterns and it should produce the same result in most cases,
+but it can fail with more complex pictures.
+
 
 ## pgfsys-tex4ht-updated.def
 
