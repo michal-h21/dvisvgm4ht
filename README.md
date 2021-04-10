@@ -27,7 +27,7 @@ take lot of time. You can speed it up using the `dvisvgm_hashes` extension for `
 
 It compiles only changed figures on subsequent compilation runs.
 
-This driver has two modes. The default one supports complex images, but it has
+The driver has two modes. The default one supports complex images, but it has
 some issues with patterns. To fix that, you can try the `tikz+` option. 
 This option supports patterns and it should produce the same result in most cases,
 but it can fail with more complex pictures.
@@ -38,7 +38,7 @@ but it can fail with more complex pictures.
 The second available driver is a modified version of the original `tex4ht`
 driver. It doesn't rely on external tools for the conversion, so the compilation can
 be faster. The downside is that the resulting SVG file can look quite different
-than expected.
+from expected.
 
 Note that if you use complex text nodes, like math contents, better
 results can be obtained using `escape=true` option. This option can be set
@@ -75,7 +75,7 @@ structure:
 
 # Installation
 
-Clone this repository to a `tex/latex` subdirectory in your local `TEXMFHOME`
+Clone this repository to a `tex/latex` sub directory in your local `TEXMFHOME`
 tree. For example:
 
      ~/texmf/tex/latex/dvisvgm4ht/
