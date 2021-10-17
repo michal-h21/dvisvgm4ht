@@ -1,4 +1,4 @@
-% Copyright 2020 by Michal Hoftich
+% Copyright 2021 by Michal Hoftich
 % Copyright 2006 by Till Tantau
 %
 % This file may be distributed and/or modified
@@ -35,7 +35,7 @@
   \ifdefined\inside@pict@cmd% handle nested uses
   \else
   % use different version of \Picture depending on the vertical mode
-  \ifvmode\def\run@pict@cmd{\Picture*}\else\def\run@pict@cmd{\Picture+}\fi%
+  \run@pict@cmd{\Picture*}%
   \def\end@pict@cmd{\EndPicture}%
   \fi\fi%
   % command used to detect nesting
@@ -65,8 +65,8 @@
     \texfourht@tikz@end%
   }
   %
-  \ConfigureEnv{tikzpicture}{\ifvmode\Picture*{}\else\Picture+{}\fi\def\inside@pict@cmd{}}{\EndPicture}{}{}
-  \ConfigureEnv{pgfpicture}{\ifvmode\Picture*{}\else\Picture+{}\fi\def\inside@pict@cmd{}}{\EndPicture}{}{}
+  \ConfigureEnv{tikzpicture}{\Picture*{}\def\inside@pict@cmd{}}{\EndPicture}{}{}
+  \ConfigureEnv{pgfpicture}{\Picture*{}\def\inside@pict@cmd{}}{\EndPicture}{}{}
   \catcode`\:=12
 }
 
