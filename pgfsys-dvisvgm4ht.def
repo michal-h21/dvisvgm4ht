@@ -33,8 +33,8 @@
   \def\end@pict@cmd{}%
   \ifdefined\EndPicture\else% We are already inside command that uses \Picture
   \ifdefined\inside@pict@cmd\else% handle nested uses
-  \ifdefined\tikzexternalize\else
-  \def\run@pict@cmd{\Picture*}
+  \ifdefined\tikzexternalize\else% Support externalize library
+  \def\run@pict@cmd{\Picture*}%
   \def\end@pict@cmd{\EndPicture}%
   \fi\fi\fi%
   % command used to detect nesting
@@ -47,16 +47,16 @@
   \egroup%
 }
 
-\AtBeginDocument{
-  \NewConfigure{tikzpicture}{2}
-  \catcode`\:=11
+\AtBeginDocument{%
+  \NewConfigure{tikzpicture}{2}%
+  \catcode`\:=11%
   \Configure{tikzpicture}{%
     \protect\csname nested:math\endcsname% support display math
     \run@pict@cmd{}%
   }{\end@pict@cmd}
   % configure the output picture format to svg, as it will require dvisvgm
   % post processing. 
-  \Configure{Picture}{.svg}
+  \Configure{Picture}{.svg}%
   % insert tex4ht hooks around TikZ picture box
   \def\pgfsys@typesetpicturebox#1{%
     \texfourht@tikz@begin%
@@ -64,9 +64,9 @@
     \texfourht@tikz@end%
   }
   %
-  \ConfigureEnv{tikzpicture}{\texfourht@tikz@begin}{\texfourht@tikz@end}{}{}
-  \ConfigureEnv{pgfpicture}{\texfourht@tikz@begin}{\texfourht@tikz@end}{}{}
-  \catcode`\:=12
+  \ConfigureEnv{tikzpicture}{\texfourht@tikz@begin}{\texfourht@tikz@end}{}{}%
+  \ConfigureEnv{pgfpicture}{\texfourht@tikz@begin}{\texfourht@tikz@end}{}{}%
+  \catcode`\:=12%
 }
 
 
