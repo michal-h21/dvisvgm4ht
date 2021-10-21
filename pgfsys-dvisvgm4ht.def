@@ -32,12 +32,11 @@
   \def\run@pict@cmd{}% insert the \Picture hooks only in the top nesting level
   \def\end@pict@cmd{}%
   \ifdefined\EndPicture\else% We are already inside command that uses \Picture
-  \ifdefined\inside@pict@cmd% handle nested uses
-  \else
-  % use different version of \Picture depending on the vertical mode
-  \run@pict@cmd{\Picture*}%
+  \ifdefined\inside@pict@cmd\else% handle nested uses
+  \ifdefined\tikzexternalize\else
+  \def\run@pict@cmd{\Picture*}
   \def\end@pict@cmd{\EndPicture}%
-  \fi\fi%
+  \fi\fi\fi%
   % command used to detect nesting
   \def\inside@pict@cmd{}%
   \csname a:tikzpicture\endcsname%
@@ -65,8 +64,8 @@
     \texfourht@tikz@end%
   }
   %
-  \ConfigureEnv{tikzpicture}{\Picture*{}\def\inside@pict@cmd{}}{\EndPicture}{}{}
-  \ConfigureEnv{pgfpicture}{\Picture*{}\def\inside@pict@cmd{}}{\EndPicture}{}{}
+  \ConfigureEnv{tikzpicture}{\texfourht@tikz@begin}{\texfourht@tikz@end}{}{}
+  \ConfigureEnv{pgfpicture}{\texfourht@tikz@begin}{\texfourht@tikz@end}{}{}
   \catcode`\:=12
 }
 
