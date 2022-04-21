@@ -57,13 +57,20 @@
   % configure the output picture format to svg, as it will require dvisvgm
   % post processing. 
   \Configure{Picture}{.svg}%
-  % insert tex4ht hooks around TikZ picture box
   \def\pgfsys@typesetpicturebox#1{%
-    \texfourht@tikz@begin%
-    \orig@pgfsys@typesetpicturebox{#1}%
-    \texfourht@tikz@end%
+    \def\@tempa{#1}%
+    % I've found that inserting picture instructions here leads to 
+    % errors when \pic feature of pgf is used. 
+    \if\@tempa\pgfpic%
+      \orig@pgfsys@typesetpicturebox{#1}%
+    \else%
+      \texfourht@tikz@begin%
+      \orig@pgfsys@typesetpicturebox{#1}%
+      \texfourht@tikz@end%
+    \fi%
   }
   %
+  % insert tex4ht hooks around TikZ picture box
   \ConfigureEnv{tikzpicture}{\texfourht@tikz@begin}{\texfourht@tikz@end}{}{}%
   \ConfigureEnv{pgfpicture}{\texfourht@tikz@begin}{\texfourht@tikz@end}{}{}%
   \catcode`\:=12%
