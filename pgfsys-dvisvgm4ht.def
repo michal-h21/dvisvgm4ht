@@ -34,7 +34,7 @@
   \ifdefined\EndPicture\else% We are already inside command that uses \Picture
   \ifdefined\inside@pict@cmd\else% handle nested uses
   \ifdefined\tikzexternalize\else% Support externalize library
-  \def\run@pict@cmd{\Picture*}%
+  \def\run@pict@cmd{\Picture*[\csname a:Picture-alt\endcsname]}%
   \def\end@pict@cmd{\EndPicture}%
   \fi\fi\fi%
   % command used to detect nesting
@@ -52,7 +52,7 @@
   \catcode`\:=11%
   \Configure{tikzpicture}{%
     \protect\csname nested:math\endcsname% support display math
-    \run@pict@cmd{\csname a:Picture-alt\endcsname}%
+    \run@pict@cmd{}%
   }{\end@pict@cmd}
   % configure the output picture format to svg, as it will require dvisvgm
   % post processing. 
