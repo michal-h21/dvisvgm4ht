@@ -52,7 +52,7 @@
   \catcode`\:=11%
   \Configure{tikzpicture}{%
     \protect\csname nested:math\endcsname% support display math
-    \run@pict@cmd{}%
+    \run@pict@cmd{\csname a:Picture-alt\endcsname}%
   }{\end@pict@cmd}
   % configure the output picture format to svg, as it will require dvisvgm
   % post processing. 
