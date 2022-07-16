@@ -75,9 +75,9 @@ structure:
 
 # Installation
 
-Clone this repository to a `tex/latex` sub directory in your local `TEXMFHOME`
+Clone this repository to a `tex/generic` sub directory in your local `TEXMFHOME`
 tree. For example:
 
-     ~/texmf/tex/latex/dvisvgm4ht/
+     ~/texmf/tex/generic/dvisvgm4ht/
 
 Read more about [TEXMFHOME](https://tex.stackexchange.com/a/271545/2891).
