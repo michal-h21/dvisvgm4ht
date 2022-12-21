@@ -61,12 +61,14 @@ package is loaded:
       \def\pgfsysdriver{<drivername>}
     \fi 
 
-For example document that use the `dvisvgm` driver should use the following
+The `pgfsys-dvisvgm4ht.def` is used by default, so you don't need to load it this way.
+
+For example document that use the `tex4ht-updated` driver should use the following
 structure:
 
     \documentclass{article}
     \ifdefined\HCode
-      \def\pgfsysdriver{pgfsys-dvisvgm4ht.def}
+      \def\pgfsysdriver{pgfsys-tex4ht-updated.def}
     \fi 
     \usepackage{tikz}
     \begin{document}
