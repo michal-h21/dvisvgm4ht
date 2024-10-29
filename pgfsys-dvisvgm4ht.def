@@ -60,7 +60,7 @@
 
 \def\texfourht@tikz@begin{
   \protect\csname nested:math\endcsname% support display math
-  \Picture+[\csname a:Picture-alt\endcsname]{}%
+  \Picture*[\csname a:Picture-alt\endcsname]{}%
 }
 \def\texfourht@tikz@end{\EndPicture}
 
