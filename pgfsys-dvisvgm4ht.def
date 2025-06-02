@@ -60,6 +60,9 @@
 
 \def\texfourht@tikz@begin{
   \protect\csname nested:math\endcsname% support display math
+  \def\Ginclude@bmp##1{% support \includegraphics inside TikZ images
+    \special{dvisvgm:img \the\Gin@req@width \the\Gin@req@height ##1}%
+  }
   \Picture*[\csname a:Picture-alt\endcsname]{}%
 }
 \def\texfourht@tikz@end{\EndPicture}
