@@ -48,10 +48,13 @@
 
  % we must remove Picture-alt in \pgfsys@beginpicture, because it can result in alt text included in the image
  \def\:tempa{\Configure{Picture-alt}{}\texfourht@tikz@begin\o:pgfsys@beginpicture:}
- \HLet\pgfsys@beginpicture\:tempa
+ % it seems that we should redefine just \pgfsys@typesetpicturebox, 
+ % redefining of \pgfsys@beginpicture can lead to errors:
+ % https://tex.stackexchange.com/a/764811/2891
+ %\HLet\pgfsys@beginpicture\:tempa
  \let\o:pgfsys@endpicture:\pgfsys@endpicture
  \def\:tempa{\o:pgfsys@endpicture:}
- \HLet\pgfsys@endpicture\:tempa
+ %\HLet\pgfsys@endpicture\:tempa
 
  %  start picture around TikZ and PGF environments
  \ConfigureEnv{tikzpicture}{\begingroup\texfourht@tikz@begin}{\texfourht@tikz@end\endgroup}{}{}%
